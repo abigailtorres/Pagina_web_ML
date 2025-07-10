@@ -503,13 +503,39 @@
                     </div>
                 </div>
 
+
                 <!-- Interactive Tab -->
                 <div id="dt-interactive" class="tab-content active">
+                    
+                    <!-- AQUÍ VA LA DESCRIPCIÓN DEL JUEGO -->
+                    <div class="mb-6 p-4 bg-gray-800/50 rounded-lg border border-cyan-500/30">
+                        <h3 class="text-xl font-semibold text-cyan-400 mb-3">🎮 Demo Interactiva: Clasificador de Flores Iris</h3>
+                        <p class="text-gray-300 mb-4">
+                            Entrena tu propio árbol de decisión para clasificar especies de flores iris. 
+                            El algoritmo aprenderá a distinguir entre 3 especies (Setosa, Versicolor, Virginica) 
+                            basándose en el tamaño de pétalos y sépalos.
+                        </p>
+                        <p class="text-gray-400 text-sm">
+                            <strong>¿Cómo funciona?</strong> El árbol hace preguntas como "¿El pétalo es > 2.5cm?" 
+                            para dividir las flores en grupos cada vez más puros hasta poder predecir la especie.
+                        </p>
+                    </div>
+
                     <div class="grid lg:grid-cols-3 gap-8">
                         <!-- Panel de Controles -->
                         <div class="space-y-6">
                             <!-- Controles del Árbol -->
                             <div class="glass-effect rounded-xl p-6">
+                                
+                                <!-- AQUÍ VAN LOS PARÁMETROS -->
+                                <div class="mb-4 p-3 bg-gray-700/50 rounded-lg">
+                                    <h4 class="font-semibold text-cyan-400 mb-2">⚙️ Parámetros de Entrenamiento</h4>
+                                    <div class="space-y-2 text-sm text-gray-300">
+                                        <p><strong>Profundidad Máxima:</strong> Cuántos niveles puede tener el árbol. Más profundo = más complejo.</p>
+                                        <p><strong>Muestras Mínimas:</strong> Mínimo de datos para dividir un nodo. Más alto = árbol más simple.</p>
+                                    </div>
+                                </div>
+
                                 <h3 class="text-xl font-bold text-green-400 mb-4">Controles del Árbol</h3>
                                 <div class="flex flex-wrap gap-4 mb-4">
                                     <button onclick="trainDecisionTree()" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg transition-all duration-300 transform hover:scale-105" id="train-tree-btn">
