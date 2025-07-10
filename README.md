@@ -97,7 +97,7 @@ python server.py
 
 Deberías ver:
 \`\`\`
- * Running on http://127.0.0.1:5000
+ * Running on http://127.0.0.1:4999
  * Debug mode: on
 ML Explorer Server iniciado correctamente!
 \`\`\`
@@ -150,7 +150,7 @@ ML Explorer Server iniciado correctamente!
 
 #### Entrenar Árbol de Decisión
 \`\`\`javascript
-const response = await fetch('http://localhost:5000/api/train-decision-tree', {
+const response = await fetch('http://localhost:4999/api/train-decision-tree', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -163,7 +163,7 @@ const result = await response.json();
 
 #### Hacer Predicción
 \`\`\`javascript
-const prediction = await fetch('http://localhost:5000/api/predict', {
+const prediction = await fetch('http://localhost:4999/api/predict', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -226,7 +226,7 @@ En `server.py`, puedes modificar:
 
 \`\`\`python
 # Puerto del servidor
-app.run(host='127.0.0.1', port=5000, debug=True)
+app.run(host='127.0.0.1', port=4999, debug=True)
 
 # Configuración de CORS
 CORS(app, origins=['*'])  # Cambiar por dominios específicos en producción
@@ -280,14 +280,14 @@ pip install flask flask-cors numpy
 **Solución**:
 \`\`\`bash
 # Verificar que el servidor esté corriendo
-curl http://localhost:5000/api/health
+curl http://localhost:4999/api/health
 
 # Verificar puertos en uso
-netstat -an | grep 5000
+netstat -an | grep 4999
 \`\`\`
 
 #### 3. Errores de CORS
-**Error**: `Access to fetch at 'http://localhost:5000' from origin 'null' has been blocked by CORS policy`
+**Error**: `Access to fetch at 'http://localhost:4999' from origin 'null' has been blocked by CORS policy`
 **Solución**: Verificar que Flask-CORS esté instalado y configurado correctamente
 
 #### 4. Visualizaciones no aparecen

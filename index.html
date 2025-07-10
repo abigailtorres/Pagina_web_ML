@@ -719,7 +719,7 @@
                                     <div class="code-block">
 <pre><span class="highlight-green">// Frontend JavaScript - Llamada al servidor Python</span>
 <span class="highlight-blue">async function</span> <span class="highlight-yellow">trainDecisionTree</span>() {
-    <span class="highlight-blue">const</span> <span class="highlight-purple">response</span> = <span class="highlight-blue">await</span> <span class="highlight-yellow">fetch</span>(<span class="highlight-red">'http://localhost:5000/api/train-decision-tree'</span>, {
+    <span class="highlight-blue">const</span> <span class="highlight-purple">response</span> = <span class="highlight-blue">await</span> <span class="highlight-yellow">fetch</span>(<span class="highlight-red">'http://localhost:4999/api/train-decision-tree'</span>, {
         <span class="highlight-purple">method</span>: <span class="highlight-red">'POST'</span>,
         <span class="highlight-purple">headers</span>: {
             <span class="highlight-red">'Content-Type'</span>: <span class="highlight-red">'application/json'</span>
@@ -1098,7 +1098,7 @@
                                     <div class="code-block">
 <pre><span class="highlight-green">// Frontend - Crear agente de Q-Learning</span>
 <span class="highlight-blue">async function</span> <span class="highlight-yellow">createRLAgent</span>() {
-    <span class="highlight-blue">const</span> <span class="highlight-purple">response</span> = <span class="highlight-blue">await</span> <span class="highlight-yellow">fetch</span>(<span class="highlight-red">'http://localhost:5000/api/create-rl-agent'</span>, {
+    <span class="highlight-blue">const</span> <span class="highlight-purple">response</span> = <span class="highlight-blue">await</span> <span class="highlight-yellow">fetch</span>(<span class="highlight-red">'http://localhost:4999/api/create-rl-agent'</span>, {
         <span class="highlight-purple">method</span>: <span class="highlight-red">'POST'</span>,
         <span class="highlight-purple">headers</span>: { <span class="highlight-red">'Content-Type'</span>: <span class="highlight-red">'application/json'</span> },
         <span class="highlight-purple">body</span>: <span class="highlight-yellow">JSON</span>.<span class="highlight-purple">stringify</span>({
@@ -1264,7 +1264,7 @@
 <span class="highlight-green"># 3. Abrir el frontend</span>
 <span class="highlight-purple">open index.html</span>
 
-<span class="highlight-green"># El servidor estará disponible en http://localhost:5000</span>
+<span class="highlight-green"># El servidor estará disponible en http://localhost:4999</span>
 <span class="highlight-green"># El frontend se conectará automáticamente al servidor</span></pre>
                 </div>
             </div>
@@ -1547,7 +1547,7 @@
 
     <script>
         // Configuración del servidor
-        const SERVER_URL = 'http://localhost:5000';
+        const SERVER_URL = 'http://localhost:4999';
         let sessionId = 'user-session-' + Math.random().toString(36).substr(2, 9);
 
         // Variables globales

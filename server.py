@@ -600,6 +600,6 @@ if __name__ == '__main__':
     print("  - POST /api/train-rl-agent")
     print("  - POST /api/get-optimal-path")
     print("  - POST /api/reset-rl-agent")
-    print("\n🌐 Servidor corriendo en http://localhost:5000")
+    print("\n🌐 Servidor corriendo en http://localhost:4999")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=True, host='0.0.0.0', port=4999)
