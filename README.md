@@ -203,6 +203,22 @@ const prediction = await fetch('http://localhost:5000/api/predict', {
 - **Ambiente**: Laberinto 5x5 con obstáculos y recompensas
 
 ## 📁 Estructura del Proyecto
+ml-explorer/
+│
+├── server.py # Servidor Flask con API REST
+├── index.html # Frontend principal
+├── requirements.txt # Dependencias de Python
+├── README.md # Documentación (este archivo)
+│
+├── assets/ # Carpeta de recursos (en HTML)
+│ ├── styles/ # Estilos CSS embebidos
+│ ├── scripts/ # JavaScript embebido
+│ └── images/ # Recursos gráficos
+│
+└── api/ # Endpoints del servidor
+├── decision_tree/ # Lógica de árboles de decisión
+├── reinforcement/ # Lógica de Q-Learning
+└── utils/ # Utilidades compartidas 
 
 \`\`\`
 ml-explorer/
@@ -321,116 +337,6 @@ const DEBUG = true;
 if (DEBUG) console.log('Estado actual:', data);
 \`\`\`
 
-## 📚 Conceptos Aprendidos
-
-### Machine Learning
-
-#### Aprendizaje Supervisado
-- **Árboles de Decisión**: Clasificación basada en reglas
-- **Entropía**: Medida de impureza en los datos
-- **Overfitting**: Cómo evitar el sobreajuste
-- **Validación**: Evaluación de modelos
-
-#### Aprendizaje por Refuerzo
-- **Q-Learning**: Aprendizaje basado en recompensas
-- **Ecuación de Bellman**: Actualización de valores
-- **Exploración vs Explotación**: Balance entre descubrir y aprovechar
-- **Política óptima**: Encontrar la mejor estrategia
-
-### Desarrollo Web
-
-#### Arquitectura Cliente-Servidor
-- **Separación de responsabilidades**: Frontend vs Backend
-- **API REST**: Comunicación estructurada
-- **Manejo de estados**: Sesiones y persistencia
-- **Escalabilidad**: Diseño para múltiples usuarios
-
-#### Programación Asíncrona
-- **Promises y async/await**: Manejo de operaciones no bloqueantes
-- **Fetch API**: Comunicación HTTP moderna
-- **Error handling**: Manejo robusto de errores
-- **User feedback**: Indicadores de progreso y estado
-
-### Visualización de Datos
-- **D3.js**: Manipulación de DOM basada en datos
-- **Chart.js**: Gráficos interactivos
-- **Canvas API**: Dibujo programático
-- **SVG**: Gráficos vectoriales escalables
-
-## 🚀 Mejoras Futuras
-
-### Algoritmos Adicionales
-- [ ] Support Vector Machines (SVM)
-- [ ] Random Forest
-- [ ] Neural Networks básicas
-- [ ] K-Means Clustering
-- [ ] Linear/Logistic Regression
-
-### Funcionalidades
-- [ ] Carga de datasets personalizados
-- [ ] Exportación de modelos entrenados
-- [ ] Comparación de algoritmos
-- [ ] Métricas de evaluación avanzadas
-- [ ] Visualizaciones 3D
-
-### Infraestructura
-- [ ] Base de datos para persistencia
-- [ ] Sistema de autenticación
-- [ ] WebSockets para tiempo real
-- [ ] Contenedores Docker
-- [ ] Tests automatizados
-
-## 🤝 Contribuciones
-
-¡Las contribuciones son bienvenidas! Aquí te explico cómo contribuir:
-
-### Cómo Contribuir
-
-1. **Fork** el repositorio
-2. **Crear** una rama para tu feature: `git checkout -b feature/nueva-funcionalidad`
-3. **Commit** tus cambios: `git commit -am 'Agregar nueva funcionalidad'`
-4. **Push** a la rama: `git push origin feature/nueva-funcionalidad`
-5. **Crear** un Pull Request
-
-### Áreas de Contribución
-
-#### 🧠 **Machine Learning**
-- Implementar nuevos algoritmos
-- Optimizar algoritmos existentes
-- Agregar métricas de evaluación
-- Mejorar la precisión de los modelos
-
-#### 🎨 **Frontend**
-- Mejorar la interfaz de usuario
-- Agregar nuevas visualizaciones
-- Optimizar el rendimiento
-- Hacer la aplicación más accesible
-
-#### 🔧 **Backend**
-- Optimizar la API
-- Agregar nuevos endpoints
-- Mejorar el manejo de errores
-- Implementar caching
-
-#### 📚 **Documentación**
-- Mejorar este README
-- Agregar tutoriales
-- Documentar el código
-- Crear ejemplos de uso
-
-### Estándares de Código
-
-#### Python
-- Seguir PEP 8
-- Usar type hints cuando sea posible
-- Documentar funciones con docstrings
-- Escribir tests para nuevas funcionalidades
-
-#### JavaScript
-- Usar ES6+ features
-- Seguir convenciones de naming
-- Comentar código complejo
-- Manejar errores apropiadamente
 
 ## 📄 Licencia
 
@@ -460,36 +366,6 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 \`\`\`
 
-## 🙏 Agradecimientos
-
-### Recursos y Librerías
-- **[Flask](https://flask.palletsprojects.com/)** - Framework web para Python
-- **[NumPy](https://numpy.org/)** - Computación científica
-- **[Chart.js](https://www.chartjs.org/)** - Gráficos interactivos
-- **[D3.js](https://d3js.org/)** - Visualización de datos
-- **[Iris Dataset](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html)** - Dataset clásico de ML
-
-### Inspiración y Referencias
-- **[Scikit-learn](https://scikit-learn.org/)** - Implementaciones de referencia
-- **[Reinforcement Learning: An Introduction](http://incompleteideas.net/book/the-book.html)** - Sutton & Barto
-- **[The Elements of Statistical Learning](https://web.stanford.edu/~hastie/ElemStatLearn/)** - Hastie, Tibshirani & Friedman
-- **Comunidad de Machine Learning** - Por compartir conocimiento y mejores prácticas
-
-### Contribuidores
-- Tu nombre podría estar aquí - ¡contribuye al proyecto!
-
----
-
-## 📞 Contacto y Soporte
-
-Si tienes preguntas, sugerencias o encuentras bugs:
-
-1. **Issues**: Crear un issue en el repositorio
-2. **Discussions**: Participar en las discusiones del proyecto
-3. **Email**: Contactar a los mantenedores
-
----
 
 **¡Gracias por usar ML Explorer! 🚀**
 
-*Hecho con ❤️ para la comunidad de Machine Learning*
