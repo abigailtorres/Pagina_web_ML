@@ -1,4 +1,5 @@
 # 🤖 ML Explorer - Interactive Machine Learning Platform
+# Trabajo de: Abigail Torres y Matias Leiva
 
 Una plataforma web interactiva para aprender y experimentar con algoritmos de Machine Learning, con arquitectura cliente-servidor separada.
 
