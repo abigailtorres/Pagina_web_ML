@@ -18,7 +18,6 @@ Una plataforma web interactiva para aprender y experimentar con algoritmos de Ma
 - [Estructura del Proyecto](#-estructura-del-proyecto)
 - [Configuración](#-configuración)
 - [Solución de Problemas](#-solución-de-problemas)
-- [Conceptos Aprendidos](#-conceptos-aprendidos)
 - [Licencia](#-licencia)
 
 ## ✨ Características
