@@ -69,18 +69,18 @@ Una plataforma web interactiva para aprender y experimentar con algoritmos de Ma
 
 1. **Clonar o descargar el proyecto**
    \`\`\`bash
-   # Si tienes git
+   Si tienes git
    git clone <repository-url>
    cd ml-explorer
    
-   # O simplemente descargar y extraer los archivos
+   O simplemente descargar y extraer los archivos
    \`\`\`
 
 2. **Instalar dependencias de Python**
    \`\`\`bash
    pip install flask flask-cors numpy
    
-   # O usando requirements.txt
+   O usando requirements.txt
    pip install -r requirements.txt
    \`\`\`
 
