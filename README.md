@@ -19,7 +19,6 @@ Una plataforma web interactiva para aprender y experimentar con algoritmos de Ma
 - [Configuración](#-configuración)
 - [Solución de Problemas](#-solución-de-problemas)
 - [Conceptos Aprendidos](#-conceptos-aprendidos)
-- [Contribuciones](#-contribuciones)
 - [Licencia](#-licencia)
 
 ## ✨ Características
@@ -43,20 +42,19 @@ Una plataforma web interactiva para aprender y experimentar con algoritmos de Ma
 - **Indicadores de Estado**: Conexión al servidor y progreso de operaciones
 
 ## 🏗️ Arquitectura
-
-\`\`\`
+```
 ┌─────────────────┐    HTTP/JSON    ┌─────────────────┐
 │                 │ ◄──────────────► │                 │
-│   Frontend      │                 │   Backend       │
-│   (HTML/JS)     │                 │   (Python)      │
-│                 │                 │                 │
+│   Frontend      │                 │   Backend        │
+│   (HTML/JS)     │                 │   (Python)       │
+│                 │                 │                  │
 ├─────────────────┤                 ├─────────────────┤
-│ • Visualización │                 │ • ML Algorithms │
+│ • Visualización │                 │ • ML Algorithms  │
 │ • Interacciones │                 │ • Data Processing│
-│ • UI/UX         │                 │ • API Endpoints │
-│ • Validaciones  │                 │ • Session Mgmt  │
+│ • UI/UX         │                 │ • API Endpoints  │
+│ • Validaciones  │                 │ • Session Mgmt   │
 └─────────────────┘                 └─────────────────┘
-\`\`\`
+```
 
 ## 🚀 Instalación
 
@@ -203,42 +201,24 @@ const prediction = await fetch('http://localhost:5000/api/predict', {
 - **Ambiente**: Laberinto 5x5 con obstáculos y recompensas
 
 ## 📁 Estructura del Proyecto
-ml-explorer/
-│
-├── server.py # Servidor Flask con API REST
-├── index.html # Frontend principal
-├── requirements.txt # Dependencias de Python
-├── README.md # Documentación (este archivo)
-│
-├── assets/ # Carpeta de recursos (en HTML)
-│ ├── styles/ # Estilos CSS embebidos
-│ ├── scripts/ # JavaScript embebido
-│ └── images/ # Recursos gráficos
-│
-└── api/ # Endpoints del servidor
-├── decision_tree/ # Lógica de árboles de decisión
-├── reinforcement/ # Lógica de Q-Learning
-└── utils/ # Utilidades compartidas 
-
-\`\`\`
+```
 ml-explorer/
 │
 ├── server.py              # Servidor Flask con API REST
 ├── index.html             # Frontend principal
 ├── requirements.txt       # Dependencias de Python
-├── README.md             # Documentación (este archivo)
+├── README.md              # Documentación (este archivo)
 │
 ├── assets/ (en HTML)
-│   ├── styles/           # Estilos CSS embebidos
-│   ├── scripts/          # JavaScript embebido
-│   └── images/           # Recursos gráficos
+│   ├── styles/            # Estilos CSS embebidos
+│   ├── scripts/           # JavaScript embebido
+│   └── images/            # Recursos gráficos
 │
-└── api/                  # Endpoints del servidor
-    ├── decision_tree/    # Lógica de árboles de decisión
-    ├── reinforcement/    # Lógica de Q-Learning
-    └── utils/           # Utilidades compartidas
-\`\`\`
-
+└── api/                   # Endpoints del servidor
+    ├── decision_tree/     # Lógica de árboles de decisión
+    ├── reinforcement/     # Lógica de Q-Learning
+    └── utils/             # Utilidades compartidas
+```
 ## ⚙️ Configuración
 
 ### Configuración del Servidor
