@@ -131,8 +131,19 @@
             border: 2px solid rgba(255, 255, 255, 0.2);
             border-radius: 12px;
             background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            width: 100%;
+           
         }
         
+        .tree-container svg {
+            display: inline-block;
+            margin: 0px;
+            min-width: 800px;
+            min-height: 400px;
+            
+        }
+
         .tree-container::-webkit-scrollbar {
             width: 12px;
             height: 12px;
@@ -1697,6 +1708,7 @@
                     decisionTree = data.tree;
                     renderDecisionTree();
                     updatePrediction();
+                    centerTreeView();
                     showMessage('dt-messages', 'Árbol de decisión entrenado exitosamente', 'success');
                 } else {
                     throw new Error(data.error || 'Error desconocido');
@@ -1808,12 +1820,70 @@
                 return;
             }
 
-            // Configurar dimensiones del SVG
-            const svgWidth = 1200;
-            const svgHeight = 800;
+        // Configurar dimensiones del SVG
+
+            // Calcular dimensiones dinámicas del SVG basadas en la profundidad del árbol
+            function calculateTreeDimensions(tree, maxDepth) {
+                const baseWidth = 1000;
+                const baseHeight = 500;
+                const minWidth = 800;
+                const minHeight = 400;
+                
+                if (maxDepth <= 2) {
+                    return { width: minWidth, height: minHeight };
+                }
+                
+                const depthMultiplier = Math.max(1, maxDepth / 3);
+                const widthMultiplier = Math.max(1, Math.pow(2, Math.min(maxDepth - 1, 4)) / 4);
+                
+                return {
+                    width: Math.max(minWidth, baseWidth * widthMultiplier),
+                    height: Math.max(minHeight, baseHeight + (maxDepth * 120))
+                };
+            }
+
+            const dimensions = calculateTreeDimensions(decisionTree, currentDisplayDepth);
+            const svgWidth = dimensions.width;
+            const svgHeight = dimensions.height;
+
             svg.setAttribute('width', svgWidth);
             svg.setAttribute('height', svgHeight);
             svg.setAttribute('viewBox', `0 0 ${svgWidth} ${svgHeight}`);
+            svg.style.minWidth = svgWidth + 'px';
+            svg.style.minHeight = svgHeight + 'px';
+
+            //Funcion para centrar la vista del arbol 
+            function centerTreeView() {
+                const container = document.querySelector('.tree-container');
+                if (!container) return;
+                
+                setTimeout(() => {
+                    const svg = container.querySelector('svg');
+                    if (!svg) return;
+                    
+                    // El nodo raíz siempre está en estas coordenadas
+                    const svgWidth = parseInt(svg.getAttribute('width')) || 1200;
+                    const rootNodeX = svgWidth / 2;  // Posición X del nodo raíz
+                    const rootNodeY = 80;            // Posición Y del nodo raíz
+                    
+                    // Dimensiones del contenedor
+                    const containerWidth = container.clientWidth;
+                    const containerHeight = container.clientHeight;
+                    
+                    // Calcular scroll para centrar el nodo raíz en la vista
+                    const scrollLeft = Math.max(0, rootNodeX - (containerWidth / 2));
+                    const scrollTop = Math.max(0, rootNodeY - (containerHeight / 2));
+                    
+                    // Centrar en el nodo raíz
+                    container.scrollTo({
+                        left: scrollLeft,
+                        top: scrollTop,
+                        behavior: 'smooth'
+                    });
+                    
+                    console.log(`Centrando en nodo raíz: (${rootNodeX}, ${rootNodeY})`);
+                }, 200);
+            }
 
             // Obtener IDs de nodos en el camino de predicción
             const pathNodeIds = predictionPath.map(node => node.id);
@@ -1824,7 +1894,7 @@
                 const nodeWidth = 180;
                 const nodeHeight = 90;
                 const levelHeight = 140;
-                const childOffset = Math.max(120, 300 / (level + 1));
+                const childOffset = Math.max(150, 400 / (level + 1));
 
                 // Dibujar línea al padre si existe
                 if (parentX !== null && parentY !== null) {
@@ -1916,6 +1986,7 @@
             }
 
             renderNode(decisionTree, svgWidth / 2, 80, 0);
+            centerTreeView();
         }
 
         function showNodeInfo(node) {
